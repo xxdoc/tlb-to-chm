@@ -1,0 +1,22 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=<Compiled file>
+Contents file=merge.hhc
+Default Window=default
+Default topic=default.htm
+Display compile progress=No
+Enhanced decompilation=Yes
+Full-text search=Yes
+Index file=merge.hhk
+Language=0x804 中文(中国)
+Title=<Title>
+Create CHI file=Yes
+
+[WINDOWS]
+default="<Title bar text>","merge.hhc","merge.hhk","default.htm","default.htm",,,,,0x73520,323,0x74387E,,,,,,,,0
+
+[FILES]
+default.htm
+
+[INFOTYPES]
+

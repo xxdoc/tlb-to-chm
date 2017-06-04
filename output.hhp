@@ -1,0 +1,21 @@
+[OPTIONS]
+Binary Index=Yes
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=<Compiled file>
+Contents file=output.hhc
+Default Window=default
+Default topic=<Default topic>
+Display compile progress=No
+Enhanced decompilation=Yes
+Full-text search=Yes
+Index file=output.hhk
+Language=0x804 中文(中国)
+Title=<Title>
+
+[WINDOWS]
+default="<Title bar text>","output.hhc","output.hhk","<Default topic>","<Default topic>",,,,,0x73520,323,0x74387E,,,,,,,,0
+
+
+[INFOTYPES]
+

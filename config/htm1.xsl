@@ -298,6 +298,7 @@
 				<xsl:with-param name="type" select="'Class'" />
 				<xsl:with-param name="majorver" select="@majorversion" />
 				<xsl:with-param name="minorver" select="@minorversion" />
+				<xsl:with-param name="progid" select="@progid" />
 				<xsl:with-param name="attributes" select="@attributestrings" />
 				<xsl:with-param name="helpstring" select="@helpstring" />
 			</xsl:call-template>
@@ -720,6 +721,7 @@
 		<xsl:param name="mem" />
 		<xsl:param name="majorver" />
 		<xsl:param name="minorver" />
+		<xsl:param name="progid" />
 		<xsl:param name="attributes" />
 		<xsl:param name="helpstring" />
 		
@@ -746,6 +748,9 @@
 		</H1>
 		<xsl:if test="$majorver!='' and $minorver!=''">
 			<xsl:text>Version: </xsl:text><xsl:value-of select="$majorver" /><xsl:text>.</xsl:text><xsl:value-of select="$minorver" /><br />
+		</xsl:if>
+		<xsl:if test="$progid!=''">
+			<xsl:text>ProgID: </xsl:text><xsl:value-of select="$progid" /><br />
 		</xsl:if>
 		<xsl:if test="$attributes!=''">
 			<xsl:text>Attributes: </xsl:text><xsl:value-of select="$attributes" /><br />

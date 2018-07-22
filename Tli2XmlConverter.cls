@@ -214,6 +214,12 @@ hErr:
    Resume Next
 End Sub
 
+Private Function GetProgIdFromClsId(ByVal clsid As String) As String
+   On Error Resume Next
+   Static objShell As New WshShell
+   GetProgIdFromClsId = objShell.RegRead("HKCR\CLSID\" & clsid & "\ProgID\")
+End Function
+
 Private Sub ConvertCoclassInfo(ByRef elem As IXMLDOMElement, ByRef cci As CoClassInfo)
    On Error GoTo hErr
    Dim node As IXMLDOMElement
@@ -222,6 +228,7 @@ Private Sub ConvertCoclassInfo(ByRef elem As IXMLDOMElement, ByRef cci As CoClas
    With cci
       SetXmlAttribute node, "name", .name
       SetXmlAttribute node, "guid", .guid
+      SetXmlAttribute node, "progid", GetProgIdFromClsId(.guid)
       SetXmlAttribute node, "typekindstring", .TypeKindString
       SetAttributeStrings node, .Me
       SetXmlAttribute node, "helpstring", .HelpString

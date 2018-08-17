@@ -45,7 +45,7 @@ Source: "support\PuppyChmCompiler2.dll"; DestDir: "{cf}"; Flags: regserver
 Source: "support\hha.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "support\TlbInf32.chm"; DestDir: "{sys}"; Flags:
 Source: "support\TLBINF32.DLL"; DestDir: "{sys}"; Flags: regserver
-Source: "support\VB6Resizer2.ocx"; DestDir: "{cf}"; Flags: regserver
+Source: "support\PuppyResizer.ocx"; DestDir: "{cf}"; Flags: regserver
 Source: "support\comdlg32.ocx"; DestDir: "{sys}"; Flags: regserver
 ; 注意: 不要在任何共享系统文件上使用“Flags: ignoreversion”
 

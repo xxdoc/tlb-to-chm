@@ -43,6 +43,7 @@ Source: "default.htm"; DestDir: "{app}"; Flags: ignoreversion
 Source: "config\*"; DestDir: "{app}\config"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "support\PuppyChmCompiler2.dll"; DestDir: "{cf}"; Flags: regserver
 Source: "support\hha.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "support\itcc.dll"; DestDir: "{app}"; Flags: regserver
 Source: "support\TlbInf32.chm"; DestDir: "{sys}"; Flags:
 Source: "support\TLBINF32.DLL"; DestDir: "{sys}"; Flags: regserver
 Source: "support\PuppyResizer.ocx"; DestDir: "{cf}"; Flags: regserver

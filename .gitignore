@@ -293,3 +293,4 @@ __pycache__/
 # !tools/packages.config
 
 /tlb-to-chm.xml
+/temp

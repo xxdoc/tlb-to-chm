@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{03B209C4-7ADD-4264-A128-4BFAD583CACD}#1.0#0"; "puppyresizer.ocx"
+Object = "{03B209C4-7ADD-4264-A128-4BFAD583CACD}#1.0#0"; "PuppyResizer.ocx"
 Begin VB.Form frmListMode 
    Caption         =   "Registry List Mode"
    ClientHeight    =   3045
@@ -17,7 +17,7 @@ Begin VB.Form frmListMode
       _ExtentX        =   529
       _ExtentY        =   529
       Mode            =   0
-      FormInfo        =   "7395,3450"
+      FormInfo        =   "7515,3630"
       ItemCount       =   9
       Item1           =   "cmdReload,CommandButton,-1,1080,2580,1095,315,,,,,,0,0"
       Item2           =   "cmdClearLog,CommandButton,-1,5760,2580,1395,315,,,,,,0,0"
@@ -235,10 +235,6 @@ End Sub
 
 Private Sub Form_Terminate()
    LogTerminate Me
-End Sub
-
-Private Sub lblDonate_Click()
-   ShellExecute 0&, vbNullString, "http://me.alipay.com/sonicandychen ", vbNullString, vbNullString, vbNormalFocus
 End Sub
 
 Private Sub lstTlbs_ItemCheck(Item As Integer)

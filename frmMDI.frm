@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{03B209C4-7ADD-4264-A128-4BFAD583CACD}#1.0#0"; "puppyresizer.ocx"
+Object = "{03B209C4-7ADD-4264-A128-4BFAD583CACD}#1.0#0"; "PuppyResizer.ocx"
 Begin VB.MDIForm frmMDI 
    BackColor       =   &H8000000C&
    Caption         =   "tlb-to-chm"
@@ -9,7 +9,7 @@ Begin VB.MDIForm frmMDI
    ClientWidth     =   11850
    Icon            =   "frmMDI.frx":0000
    LinkTopic       =   "MDIForm1"
-   StartUpPosition =   2  'CenterScreen
+   StartUpPosition =   2  'ÆÁÄ»ÖÐÐÄ
    Begin PuppyResizerLib.PuppyResizer PuppyResizer1 
       Left            =   180
       Top             =   300
@@ -142,17 +142,9 @@ Attribute mobjLogMgr.VB_VarHelpID = -1
 
 Public Sub FormActivate(ByVal frm As Form)
    If frm Is frmListMode Or frm Is frmNameMode Then
-      Label1.Visible = False
-      Label2.Visible = True
-      comboOutputDir.Visible = True
-      cmdOpenDir.Visible = True
-      cmdSelectDir.Visible = True
-'   ElseIf frm Is frmMergeMode Then
-'      Label1.Visible = True
-'      Label2.Visible = False
-'      comboOutputDir.Visible = False
-'      cmdOpenDir.Visible = False
-'      cmdSelectDir.Visible = False
+      Picture1.Visible = True
+   ElseIf frm Is frmMergeMode Then
+      Picture1.Visible = False
    Else
       Debug.Assert False
    End If
@@ -256,6 +248,7 @@ Private Sub MDIForm_Load()
    mdblDelta = Picture1.Height / Height
    
 '   frmMergeMode.Show
+   frmMergeMode.Show
    frmListMode.Show
    frmNameMode.Show
 End Sub

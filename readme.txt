@@ -1,5 +1,0 @@
-This is a project aimed at convert COM Type Library Information to Compiled-Html-Manual (chm) file(s), then you can read it while you're writing Visual Basic Script (vbs) file. 
-?Name Mode: 
- 
-?List Mode: 
-

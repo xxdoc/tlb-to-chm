@@ -2,9 +2,9 @@
 ; 有关创建 Inno Setup 脚本文件的详细资料请查阅帮助文档！
 
 #define MyAppName "tlb-to-chm"
-#define MyAppVersion "1.2.0.8"
-#define MyAppPublisher "Calf workgroup"
-#define MyAppURL "http://calfworkgroup.blog.sohu.com/"
+#define MyAppVersion "1.2.0.9"
+#define MyAppPublisher "milaoshu1020"
+#define MyAppURL "http://github.com/milaoshu1020/tlb-to-chm"
 #define MyAppExeName "tlb-to-chm.exe"
 
 [Setup]
@@ -48,6 +48,7 @@ Source: "support\TlbInf32.chm"; DestDir: "{sys}"; Flags:
 Source: "support\TLBINF32.DLL"; DestDir: "{sys}"; Flags: regserver
 Source: "support\PuppyResizer.ocx"; DestDir: "{cf}"; Flags: regserver
 Source: "support\comdlg32.ocx"; DestDir: "{sys}"; Flags: regserver
+Source: "support\CommentSync.dll"; DestDir: "{app}"; Flags: regserver
 ; 注意: 不要在任何共享系统文件上使用“Flags: ignoreversion”
 
 [Icons]
@@ -60,3 +61,21 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Fil
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, "&", "&&")}}"; Flags: nowait postinstall skipifsilent
 
+[Code]
+function PrepareToInstall(var NeedsRestart: Boolean): String;
+var ResultStr:String;
+    ResultCode:Integer;
+begin
+  if RegQueryStringValue(HKLM,'SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{C841DEBE-1186-4367-8940-D24DADCE5EB1}_is1','UninstallString',ResultStr) then
+  begin
+    ResultStr := RemoveQuotes(ResultStr);
+    Exec(ResultStr,'/silent','',SW_SHOWNORMAL,ewWaitUntilTerminated,ResultCode);
+  end;
+  if RegQueryStringValue(HKLM,'SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{C841DEBE-1186-4367-8940-D24DADCE5EB1}_is1','UninstallString',ResultStr) then
+  begin
+    ResultStr := RemoveQuotes(ResultStr);
+    Exec(ResultStr,'/silent','',SW_SHOWNORMAL,ewWaitUntilTerminated,ResultCode);
+  end;
+  NeedsRestart := false;
+  result := '';
+end;
